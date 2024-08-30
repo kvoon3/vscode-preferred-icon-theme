@@ -2,7 +2,7 @@
   "publisher": "kvoon",
   "name": "preferred-icon-theme",
   "displayName": "Preferred Icon Theme",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "private": true,
   "packageManager": "pnpm@9.7.1",
   "description": "Detect preferred light/dark icon theme",
