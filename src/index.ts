@@ -20,6 +20,8 @@ const { activate, deactivate } = defineExtension(() => {
           : config.dark || iconTheme,
         ConfigurationTarget.Global,
       )
+  }, {
+    immediate: true,
   })
 })
 
