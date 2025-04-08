@@ -1,11 +1,15 @@
-import { defineExtension, useActiveColorTheme, watch } from 'reactive-vscode'
+import { defineExtension, useActiveColorTheme, useWindowState, watch } from 'reactive-vscode'
 import { ColorThemeKind, ConfigurationTarget, workspace } from 'vscode'
 import { config } from './config'
 
 const { activate, deactivate } = defineExtension(() => {
   const theme = useActiveColorTheme()
+  const { active } = useWindowState()
 
-  watch(theme, ({ kind }) => {
+  watch([theme, active], ([{ kind }, isActive]) => {
+    if (!isActive)
+      return
+
     if (!config.enable)
       return
 
